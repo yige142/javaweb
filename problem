@@ -1,0 +1,55 @@
+程序执行逻辑
+  1. url- http://localhost:8080/jweb3_war_exploded/UserServlet/ddd
+  2. 通过 HttpServlet 监听到 再通过HttpServlet的被BaseSeverlet继承关系 找到 BaseSeverlet
+  3.BaseSeverlet对url地址做分析，截取最后的 ddd是方法名，return method.invoke(this,req,resp); 其中this 指的是UserServlet类
+  从而找到UserServlet类
+  4.Userservlet类中@WebServlet("/UserServlet/*") 通过浏览器的/UserServlet/ddd 来匹配Userservlet类中的ddd方法
+
+1.map 取值赋值
+
+
+
+坑:
+1.java.lang.ClassNotFoundException: com.alibaba.druid.pool.DruidDataSourceFact
+unit单例测试jdbc没问题，开启tomcat后，提交注册数据会报该错误，intellij的libs目录下jar包没问题，网上查是tomcat
+lib目录下也要加一下druid jdbctmplate等jar包，添加后测试正常
+
+2.java.lang.NoClassDefFoundError: org/apache/commons/logging/LogFactory
+同上，tomcat里的lib再添加commons-logging-1.2.jar包即可
+
+3.tomcat输出乱码
+  原因 tomcat命令行默认的是输出格式是GBK，找他tomcat安装目录找到文件 conf/logging.properties
+                           修改或增加：java.util.logging.ConsoleHandler.encoding = GBK
+
+4.注册提交报错，提示 BaseSeverlet 31行报错
+  解决，1.试着看是否是引入包的问题，把 BaseSeverlet 引入的servlet javax servlert包导入到tomcat lib文件夹里，导致项目
+  启动不了。
+       2.参考上面坑的描述，应该还是同类问题，找到笔记本重新导入包，导入commons-logging-1.2； druid-1.0.9；
+       mysql-connector-java-5.1.39-bin；spring-beans-5.1.10.RELEASE； spring-core-5.1.10.RELEASE；
+       spring-jdbc-5.1.10.RELEASE；spring-tx-5.1.10.RELEASE jar包后，程序正常
+
+
+5. tomcat输出中文正常，intelj打印手写的中文显示乱码
+   处理 把intelj  tomcat8.5 的 VM options -Dfile.encoding=UTF-8 设置成 -Dfile.encoding=GBK
+
+6. 集成UEidtor 报语法错误 Uncaught TypeError: UE.getEditor is not a function
+   原因，加载指定的js顺序错误 ，要把 eidtor/ueditor.config.js 放在 eidtor/ueditor.all.js前面加载才行
+
+7. jsp ueidtor 后端配置项没有正常加载，上传插件不能正常使用！ （提示jsp/contrler,.....报500错误）
+   打开 ueditor/jsp/lib 路径，把 lib 下的所有 jar 包全部复制到工程项目 WEB-INF/lib 下（WEB-INF目录下没有 lib,就新建一个lib目录，然后
+   add libraris 操作），然后我们在打开上传图片界面，点击选择图片按钮出现了。
+
+8. admin/newsadd.jsp，upload.jsp 富文本里添加 了图片，提示成功，但在目录里并不显示上传的图片
+   原因，图片的确是上传了，但上传到 out/artifacts/jwebs_war_exploaded 根目录下去了。原因待考究...
+
+   考究结果：上传文件图片时，IDEA默认会在该项目的out文件夹下的子文件夹中创建你指定的文件夹，并将上传的文件保存到该文件夹中。
+   解决：在IDEA的Project Structure中的Artifacts目录中修改Output directory,将其修改为项目的web文件夹的路径。
+        output directory:E:\JAVAWORK\javaweb\web
+
+9. 上传路径调整后，图片上传到指定目录，但富文本编辑框内显示上传好的图片时 提示404
+   原因：图片回显时没带项目名称。http://localhost:8080/upload/image/20200614/1592112260915055300.png
+   解决 ueidtor目录下的config.json编辑 "imageUrlPrefix":""
+        设置加上项目名称： "imageUrlPrefix": "/jweb3_war_exploded", /* 图片访问路径前缀 */（后续打包放到tomcat,修改项目名，或者
+        隐藏项目名，该位置不知是否还要调整。或者设置一个什么变量名，让改名，或者隐藏访问项目前缀时，可以直接访问，也或许可以直接去掉该前缀名称
+        ，如果项目名称隐藏掉的话）
+

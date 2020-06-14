@@ -1,0 +1,19 @@
+.news_add{
+    width: 1200px;
+    margin: auto;
+    height: 500px;
+    background-color: darkcyan;
+}
+.news_content{
+    width: 1200px;
+    margin: auto;
+    min-height: 400px;
+    height: auto;
+    background-color: darkcyan;
+}
+.news_title{
+    width: 1200px;
+    height: 25px;
+    text-align: center;
+    background-color: antiquewhite;
+}
