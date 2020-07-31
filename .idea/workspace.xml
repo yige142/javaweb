@@ -7,9 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce35ee6c-9c47-47af-a6cc-e92ec3bd77f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jweb3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jweb3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jweb3/META-INF/jweb3.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jweb3/cn/xyz/web/severltb/NewsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jweb3/cn/xyz/web/severltb/NewsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/xyz/web/severltb/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/xyz/web/severltb/NewsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/cn/xyz/web/severltb/NewsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/cn/xyz/web/severltb/NewsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/news/upload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/news/upload.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,14 +81,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javatest" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2850575" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -318,6 +322,8 @@
       <workItem from="1591107906119" duration="5343000" />
       <workItem from="1591322116475" duration="7527000" />
       <workItem from="1592113903684" duration="433000" />
+      <workItem from="1596005303522" duration="3892000" />
+      <workItem from="1596175113446" duration="740000" />
     </task>
     <servers />
   </component>

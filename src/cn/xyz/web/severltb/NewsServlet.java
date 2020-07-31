@@ -25,10 +25,14 @@ public class NewsServlet extends BaseSeverlet {
     CharchatFilter c=new CharchatFilter();
 
 
-       public void index(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=utf-8");
-        resp.getWriter().write("sdfdsfdsf");
-        System.out.println("访问到");
+       public  void index(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+           resp.sendRedirect("../admin/news/upload.jsp");
+           resp.setContentType("text/html;charset=utf-8");
+           resp.getWriter().write("sdfdsfdsf");
+       // System.out.println("访问到");
+
     }
 
 
